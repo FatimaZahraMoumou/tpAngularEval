@@ -1,0 +1,233 @@
+<div class="w-full">
+    <div class="flex items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+        <!-- Background overlay -->
+        <!-- <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div> -->
+
+        <!-- Modal content -->
+        <div>
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <div
+                        class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10"
+                    >
+                        <!-- Icon or image for the form -->
+                        <svg
+                            class="h-6 w-6 text-blue-600"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Create New Product</h3>
+                        <div class="mt-2">
+                            <!-- Form fields -->
+                            <form class="flex flex-wrap gap-1" (ngSubmit)="onSubmit()">
+                                <!-- Category: string
+
+                                Name: string
+                                DateOfSale?: string
+                                ProductPicUrl: string
+                                Status: string
+                                Quantity: number
+                                UoM: string
+                                CurrencyCode: string
+                                Price: number
+                                Width: number
+                                Depth: number
+                                Height: number
+                                DimUnit: string -->
+                                <div>
+                                    <div class="mb-4 flex flex-col gap-1">
+                                        <label class="block text-gray-700 text-sm mb-2" for="category">
+                                            Category
+                                        </label>
+                                        <input
+                                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                            id="category"
+                                            type="text"
+                                            placeholder="Category"
+                                            name="category"
+                                            [(ngModel)]="Category"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="TaxTarifCode">
+                                        TaxTarifCode
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="TaxTarifCode"
+                                        type="text"
+                                        placeholder="TaxTarifCode"
+                                        name="TaxTarifCode"
+                                        [(ngModel)]="TaxTarifCode"
+                                    />
+                                </div>
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="SupplierName">
+                                        SupplierName
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="SupplierName"
+                                        type="text"
+                                        placeholder="SupplierName"
+                                        name="SupplierName"
+                                        [(ngModel)]="SupplierName"
+                                    />
+                                </div>
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="WeightMeasure">
+                                        WeightMeasure
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="WeightMeasure"
+                                        type="text"
+                                        placeholder="WeightMeasure"
+                                        name="WeightMeasure"
+                                        [(ngModel)]="WeightMeasure"
+                                    />
+                                </div>
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="WeightUnit">
+                                        WeightUnit
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="WeightUnit"
+                                        type="text"
+                                        placeholder="WeightUnit"
+                                        name="WeightUnit"
+                                        [(ngModel)]="WeightUnit"
+                                    />
+                                </div>
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="Description">
+                                        Description
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="Description"
+                                        type="text"
+                                        placeholder="Description"
+                                        name="Description"
+                                        [(ngModel)]="Description"
+                                    />
+                                </div>
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="Name">Name</label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="Name"
+                                        type="text"
+                                        placeholder="Name"
+                                        name="Name"
+                                        [(ngModel)]="Name"
+                                    />
+                                </div>
+
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="DateOfSale"
+                                        >Date of Sale</label
+                                    >
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="DateOfSale"
+                                        type="text"
+                                        placeholder="Date of Sale"
+                                        name="DateOfSale"
+                                        [(ngModel)]="DateOfSale"
+                                    />
+                                </div>
+
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="ProductPicUrl"
+                                        >Product Picture URL</label
+                                    >
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="ProductPicUrl"
+                                        type="url"
+                                        placeholder="Product Picture URL"
+                                        name="ProductPicUrl"
+                                        [(ngModel)]="ProductPicUrl"
+                                    />
+                                </div>
+
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="Status">Status</label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="Status"
+                                        type="text"
+                                        placeholder="Status"
+                                        name="Status"
+                                        [(ngModel)]="Status"
+                                    />
+                                </div>
+
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="Quantity">Quantity</label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="Quantity"
+                                        type="number"
+                                        placeholder="Quantity"
+                                        name="Quantity"
+                                        [(ngModel)]="Quantity"
+                                    />
+                                </div>
+
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="UoM">Unit of Measure</label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="UoM"
+                                        type="text"
+                                        placeholder="Unit of Measure"
+                                        name="UoM"
+                                        [(ngModel)]="UoM"
+                                    />
+                                </div>
+
+                                <div class="mb-4 flex flex-col gap-1">
+                                    <label class="block text-gray-700 text-sm mb-2" for="CurrencyCode"
+                                        >Currency Code</label
+                                    >
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="CurrencyCode"
+                                        type="text"
+                                        placeholder="Currency Code"
+                                        name="CurrencyCode"
+                                        [(ngModel)]="CurrencyCode"
+                                    />
+                                </div>
+                                <div class="flex justify-end items-end h-full w-full">
+                                    <input
+                                        type="submit"
+                                        class="mr-2 h-fit justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                        value="Create"
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

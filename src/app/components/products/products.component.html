@@ -1,0 +1,54 @@
+<!-- create list of products using ngFor over product component and pass product as input to product component -->
+<div class="flex bg-primaryLight w-full h-full p-5 justify-between items-center mx-3">
+    <h1>
+        Welcome to
+        <span class="text-primary">{{ title }}!</span>
+    </h1>
+
+    <app-button
+        [style]="'bg-primary text-white font-bold py-2 px-4 rounded'"
+        [type]="'button'"
+        [text]="'Add new Product'"
+        (click)="modal()"
+    >
+    </app-button>
+</div>
+<div class="flex flex-col w-full h-full p-5 justify-between items-center" *ngIf="isOpen">
+    <app-add-product (onAddProduct)="onAddProduct($event)"></app-add-product>
+</div>
+<div class="flex flex-col w-full p-5 justify-between items-center overflow-y-auto h-[30rem]">
+    <table class="table-auto">
+        <thead>
+            <tr class="">
+                <th class="border px-4 py-2">Name</th>
+                <th class="border px-4 py-2">Price</th>
+                <th class="border px-4 py-2">Description</th>
+                <th class="border px-4 py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td class="border px-4 py-2">{{ product.Name }}</td>
+                <td class="border px-4 py-2">{{ product.Price }} €</td>
+                <td class="border px-4 py-2">{{ product.Description }}</td>
+                <td class="border px-4 py-2 flex gap-3">
+                    <app-button
+                        [style]="'bg-danger text-white font-bold py-1 px-2 rounded text-[0.7rem] w-full'"
+                        [type]="'button'"
+                        [iconName]="'delete'"
+                        (click)="onDeleteProduct(product.id)"
+                    >
+                    </app-button>
+
+                    <app-button
+                        [style]="'bg-info text-white font-bold py-1 px-2 rounded text-[0.7rem] w-full'"
+                        [type]="'button'"
+                        [iconName]="'edit'"
+                        (click)="onUpdateProduct(product)"
+                    >
+                    </app-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

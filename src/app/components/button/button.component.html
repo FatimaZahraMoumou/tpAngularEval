@@ -1,0 +1,14 @@
+<div class="flex flex-col justify-center items-center">
+    <button
+        [class]="style + ' ' + (disabled ? 'opacity-50 cursor-not-allowed' : '')"
+        [disabled]="disabled"
+        [type]="type"
+        (click)="onClickButton($event)"
+    >
+        <ng-container *ngIf="iconName">
+            <fa-icon [icon]="iconSwitch"></fa-icon>
+        </ng-container>
+
+        {{ text !== undefined ? text : '' }}
+    </button>
+</div>
